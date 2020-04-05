@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:habittracker/create_goal_page.dart';
+import 'package:habittracker/main.dart';
 import 'package:habittracker/model/fruit.dart';
 import 'package:habittracker/fruit_bloc/bloc.dart';
 
@@ -30,9 +32,25 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          _fruitBloc.dispatch(AddRandomFruit());
+          Navigator.push(context, MaterialPageRoute(builder: (context) => CreateGoalPage()));
         },
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          title: Text('Home'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.business),
+          title: Text('Business'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.school),
+          title: Text('School'),
+        ),
+        ],
+      )
     );
   }
 
