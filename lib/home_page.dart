@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Fruit app'),
+        title: Text('Welcome to Habit Tracker!'),
       ),
       body: _buildBody(),
       floatingActionButton: FloatingActionButton(
@@ -36,11 +36,11 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _buildBody() {
+  BlocBuilder _buildBody() {
     return BlocBuilder(
       bloc: _fruitBloc,
       // Whenever there is a new state emitted from the bloc, builder runs.
-      builder: (BuildContext context, FruitState state) {
+      builder: (BuildContext context, dynamic state) {
         if (state is FruitsLoading) {
           return Center(
             child: CircularProgressIndicator(),
