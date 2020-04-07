@@ -24,6 +24,6 @@ class CreateGoalPage extends StatelessWidget {
 
 
   Widget _buildResults() {
-    return Center(child: Text('Enter a location'));
+    return Center(child: Text('Enter a goal'));
   }
 }

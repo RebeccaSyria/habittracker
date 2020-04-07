@@ -22,7 +22,7 @@ class FirstRoute extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.red,
+          primarySwatch: Colors.purple,
           accentColor: Colors.deepPurpleAccent,
         ),
         home: HomePage(),
