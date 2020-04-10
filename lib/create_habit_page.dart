@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:habittracker/model/habit.dart';
 
 class CreateHabitPage extends StatefulWidget {
   _CreateHabitPageState createState() => _CreateHabitPageState();
@@ -6,7 +7,8 @@ class CreateHabitPage extends StatefulWidget {
 class _CreateHabitPageState extends State<CreateHabitPage> {
   Map<String,bool> _weekdays = Map();
   String _habitTitle;
-  String dropdownValue = "one";
+  String _goal = "one";
+  bool _positiveHabit = true;
 
   @override
   void initState() {
@@ -35,11 +37,10 @@ class _CreateHabitPageState extends State<CreateHabitPage> {
               setState(() {
                 _habitTitle = query;
               });
-              print(_habitTitle);
             },
           ),
           DropdownButton(
-            value: dropdownValue,
+            value: _goal,
             icon: Icon(Icons.arrow_downward),
             iconSize: 24,
             elevation: 16,
@@ -52,7 +53,7 @@ class _CreateHabitPageState extends State<CreateHabitPage> {
             ),
             onChanged: (String newValue) {
               setState(() {
-                dropdownValue = newValue;
+                _goal = newValue;
               });
             },
             items: <String>['one', 'Two', 'Free', 'Four']
@@ -77,8 +78,21 @@ class _CreateHabitPageState extends State<CreateHabitPage> {
               _buildCheckBox("Saturday")
             ],
           ),
+          CheckboxListTile(
+            title: Text("Positive Habit?"),
+            value: _positiveHabit,
+            onChanged: (bool newValue) {
+              setState(() {
+                _positiveHabit = newValue;
+              });
+            },
+          ),
           RaisedButton(
             child: Text("Submit"),
+            onPressed: () {
+              Habit habit = Habit(name: _habitTitle, positive: _positiveHabit, goal: _goal, days: _weekdays);
+              Navigator.pop(context);
+            },
           )
         ],
       )

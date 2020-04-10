@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:habittracker/create_goal_page.dart';
 import 'package:habittracker/create_habit_page.dart';
 import 'package:habittracker/model/fruit.dart';
 import 'package:habittracker/fruit_bloc/bloc.dart';
@@ -32,7 +31,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => CreateHabitPPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => CreateHabitPage()));
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
