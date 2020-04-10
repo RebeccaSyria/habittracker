@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:habittracker/create_habit_page.dart';
 import 'package:habittracker/model/fruit.dart';
 import 'package:habittracker/fruit_bloc/bloc.dart';
+import 'package:habittracker/view_goal_page.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -31,22 +31,22 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => CreateHabitPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ViewGoalPage()));
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          title: Text('Home'),
+          title: Text('Habits'),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.business),
-          title: Text('Business'),
+          icon: Icon(Icons.assignment),
+          title: Text('Goals'),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.school),
-          title: Text('School'),
+          icon: Icon(Icons.settings),
+          title: Text('Settings'),
         ),
         ],
       )
