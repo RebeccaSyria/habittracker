@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:habittracker/create_habit_page.dart';
+import 'package:habittracker/model/habit.dart';
+import 'package:habittracker/widgets/habit_tile.dart';
 
 class ViewGoalPage extends StatelessWidget {
+  static Map<String, bool> _dayMap = {};
+  static Habit _mockHabit = Habit(
+      name: "testhabit", positive: true, goal: "", days: _dayMap);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,10 +17,11 @@ class ViewGoalPage extends StatelessWidget {
         children: <Widget>[
           buildHabitColumn(),
           RaisedButton(
-            child: Text("Add new habit"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => CreateHabitPage()));
-            }
+              child: Text("Add new habit"),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CreateHabitPage()));
+              }
           )
         ],
       ),
@@ -25,24 +32,17 @@ class ViewGoalPage extends StatelessWidget {
     return Card(
       child: Column(
         children: <Widget>[
-          buildHabitTile("habit 1"),
-          buildHabitTile("habit 2"),
-          buildHabitTile("habit 3")
+          buildHabitTile(_mockHabit),
+          buildHabitTile(_mockHabit),
+          buildHabitTile(_mockHabit)
         ],
       ),
     );
   }
 
-  Card buildHabitTile(String habitName) {
-    return Card(
-      child: Row(
-        children: <Widget>[
-          Text(habitName),
-          IconButton(
-            icon: Icon(Icons.add),
-          )
-        ],
-      ),
+  HabitTile buildHabitTile(Habit habit) {
+    return HabitTile(
+      habit: _mockHabit,
     );
   }
 }
