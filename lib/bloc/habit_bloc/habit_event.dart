@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
-import 'package:habittracker/model/habit.dart';
+import 'package:habittracker/model/habit/habit.dart';
 
 @immutable
 abstract class HabitEvent extends Equatable {

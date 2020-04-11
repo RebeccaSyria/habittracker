@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habittracker/model/habit.dart';
+import 'package:habittracker/model/habit/habit.dart';
 
 class CreateHabitPage extends StatefulWidget {
   _CreateHabitPageState createState() => _CreateHabitPageState();

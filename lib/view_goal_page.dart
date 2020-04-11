@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:habittracker/create_habit_page.dart';
-import 'package:habittracker/model/habit.dart';
+import 'package:habittracker/model/habit/habit.dart';
 import 'package:habittracker/widgets/habit_tile.dart';
 
 class ViewGoalPage extends StatelessWidget {

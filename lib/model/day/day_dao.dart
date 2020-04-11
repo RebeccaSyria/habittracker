@@ -1,6 +1,6 @@
 import 'package:sembast/sembast.dart';
 import 'package:habittracker/app_db.dart';
-import 'package:habittracker/model/day.dart';
+import 'package:habittracker/model/day/day.dart';
 
 class DayDao {
   static const String DAY_STORE_NAME = 'days';

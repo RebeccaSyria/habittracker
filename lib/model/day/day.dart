@@ -1,4 +1,4 @@
-import 'package:habittracker/model/habit.dart';
+import 'package:habittracker/model/habit/habit.dart';
 import 'package:meta/meta.dart';
 
 class Day {

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:habittracker/create_goal_page.dart';
-import 'package:habittracker/model/goal.dart';
+import 'package:habittracker/model/goal/goal.dart';
 import 'package:habittracker/view_goal_page.dart';
 
 class GoalList extends StatelessWidget {

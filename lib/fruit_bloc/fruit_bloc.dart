@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:bloc/bloc.dart';
 import 'package:habittracker/model/fruit.dart';
 import 'package:habittracker/model/fruit_dao.dart';
-import './bloc.dart';
+import '../bloc/habit_bloc/bloc.dart';
 
 class FruitBloc extends Bloc<FruitEvent, FruitState> {
   FruitDao _fruitDao = FruitDao();

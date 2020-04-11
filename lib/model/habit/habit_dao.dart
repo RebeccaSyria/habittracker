@@ -1,6 +1,6 @@
 import 'package:sembast/sembast.dart';
 import 'package:habittracker/app_db.dart';
-import 'package:habittracker/model/habit.dart';
+import 'package:habittracker/model/habit/habit.dart';
 
 class HabitDao {
   static const String HABIT_STORE_NAME = 'habits';
