@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:habittracker/create_habit_page.dart';
 import 'package:habittracker/model/habit.dart';
 import 'package:habittracker/widgets/habit_tile.dart';
 
@@ -19,7 +20,13 @@ class HabitList extends StatelessWidget {
           HabitTile(habit: _habits[0]),
           HabitTile(habit: _habits[1]),
           HabitTile(habit: _habits[2]),
-          HabitTile(habit: _habits[3])
+          HabitTile(habit: _habits[3]),
+          RaisedButton(
+            child: Text("Add New Habit"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => CreateHabitPage()));
+            },
+          )
         ],
       ),
     );

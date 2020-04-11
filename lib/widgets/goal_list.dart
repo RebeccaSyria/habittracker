@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:habittracker/model/goal.dart';
+import 'package:habittracker/view_goal_page.dart';
 
 class GoalList extends StatelessWidget {
   @override
@@ -14,18 +15,27 @@ class GoalList extends StatelessWidget {
     return Card(
       child: Column(
         children: <Widget>[
-          _buildGoalTile(_goals[0]),
-          _buildGoalTile(_goals[1]),
-          _buildGoalTile(_goals[2]),
-          _buildGoalTile(_goals[3])
+          _buildGoalTile(_goals[0], context),
+          _buildGoalTile(_goals[1], context),
+          _buildGoalTile(_goals[2], context),
+          _buildGoalTile(_goals[3], context)
         ],
       ),
     );
   }
 
-  Card _buildGoalTile(Goal goal) {
+  Card _buildGoalTile(Goal goal, BuildContext context) {
     return Card(
-      child: Text(goal.name),
+      child: Row(
+        children: <Widget>[
+          Text(goal.name),
+          IconButton(
+            icon: Icon(Icons.assignment),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ViewGoalPage()));
+            })
+    ]
+      ),
     );
   }
 }
