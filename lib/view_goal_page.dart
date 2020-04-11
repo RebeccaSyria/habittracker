@@ -33,7 +33,7 @@ class ViewGoalPage extends StatelessWidget {
     );
   }
 
-  Card buildHabitTile( String habitName) {
+  Card buildHabitTile(String habitName) {
     return Card(
       child: Row(
         children: <Widget>[
