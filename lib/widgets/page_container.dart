@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:habittracker/widgets/goal_list.dart';
 import 'package:habittracker/widgets/habits_list.dart';
-import 'package:habittracker/widgets/settings.dart';
+import 'package:habittracker/widgets/day_list.dart';
 
 class PageContainer extends StatefulWidget {
   _PageContainerState createState() => _PageContainerState();
@@ -13,7 +13,7 @@ class _PageContainerState extends State<PageContainer> {
   static List<Widget> _pageOptions = <Widget>[
     HabitList(),
     GoalList(),
-    SettingsCard()
+    DayList()
   ];
   @override
   Widget build(BuildContext context) {
@@ -34,12 +34,13 @@ class _PageContainerState extends State<PageContainer> {
             title: Text('Goals'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            title: Text('Settings'),
-          ),
+            icon: Icon(Icons.calendar_today),
+            title: Text('History'),
+          )
         ],
         currentIndex: _index,
         onTap: _onItemTap,
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
