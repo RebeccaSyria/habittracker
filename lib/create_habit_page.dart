@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:habittracker/bloc/habit_bloc/bloc.dart';
 import 'package:habittracker/model/habit/habit.dart';
 
 class CreateHabitPage extends StatefulWidget {
+  final HabitBloc habitBloc;
+
+  CreateHabitPage({@required this.habitBloc});
+
   _CreateHabitPageState createState() => _CreateHabitPageState();
 }
 class _CreateHabitPageState extends State<CreateHabitPage> {
@@ -91,6 +96,7 @@ class _CreateHabitPageState extends State<CreateHabitPage> {
             child: Text("Submit"),
             onPressed: () {
               Habit habit = Habit(name: _habitTitle, positive: _positiveHabit, goal: _goal, days: _weekdays);
+              widget.habitBloc.dispatch(AddHabit(habit));
               Navigator.pop(context);
             },
           )

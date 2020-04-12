@@ -26,6 +26,7 @@ class HabitDao {
   Future delete(Habit habit) async {}
 
   Future getAllSortedByName() async {
+    print("get all");
     final finder = Finder(sortOrders: [
       SortOrder('name')
     ]);
@@ -33,6 +34,8 @@ class HabitDao {
       await _db,
       finder: finder
     );
+    print("found habits!");
+    print(recordSnapshots);
     return recordSnapshots.map((snapshot) {
       final habit = Habit.fromMap(snapshot.value);
       habit.id = snapshot.key;

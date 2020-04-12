@@ -7,7 +7,9 @@ abstract class HabitState extends Equatable {
   HabitState([List props = const[]]) : super(props);
 }
 
-class HabitsLoading extends HabitState {}
+class HabitsLoading extends HabitState {
+  HabitsLoading() : super();
+}
 
 class HabitsLoaded extends HabitState {
   final List<Habit> habits;

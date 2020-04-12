@@ -25,6 +25,7 @@ class Habit {
   }
 
   static Habit fromMap(Map<String, dynamic> map) {
+    print("habit from map");
     return Habit(
       name: map['name'],
       positive: map['positive'],

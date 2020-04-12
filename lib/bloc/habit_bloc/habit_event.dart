@@ -7,11 +7,19 @@ abstract class HabitEvent extends Equatable {
   HabitEvent([List props = const []]) : super(props);
 }
 
-class LoadHabits extends HabitEvent {}
+class LoadHabits extends HabitEvent {
+  LoadHabits() : super();
+}
 
-class AddHabit extends HabitEvent {}
+class AddHabit extends HabitEvent {
+  final Habit habit;
+  AddHabit(this.habit) : super([habit]);
+}
 
-class UpdateHabit extends HabitEvent {}
+class UpdateHabit extends HabitEvent {
+  final Habit habit;
+  UpdateHabit(this.habit) : super([habit]);
+}
 
 class DeleteHabit extends HabitEvent {
   final Habit habit;
