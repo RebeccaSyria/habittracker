@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:habittracker/model/goal/goal.dart';
+import 'package:meta/meta.dart';
 
+@immutable
 abstract class GoalEvent extends Equatable {
   GoalEvent([List props = const[]]) : super(props);
 }
