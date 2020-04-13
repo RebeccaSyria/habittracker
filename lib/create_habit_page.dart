@@ -44,32 +44,37 @@ class _CreateHabitPageState extends State<CreateHabitPage> {
               });
             },
           ),
-          DropdownButton(
-            value: _goal,
-            icon: Icon(Icons.arrow_downward),
-            iconSize: 24,
-            elevation: 16,
-            style: TextStyle(
-                color: Colors.deepPurple
-            ),
-            underline: Container(
-              height: 2,
-              color: Colors.deepPurpleAccent,
-            ),
-            onChanged: (String newValue) {
-              setState(() {
-                _goal = newValue;
-              });
-            },
-            items: <String>['one', 'Two', 'Free', 'Four']
-                .map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            })
-                .toList(),
+          Row(
+            children: <Widget>[
+              Text("Goal:"),
+              DropdownButton(
+                value: _goal,
+                icon: Icon(Icons.arrow_downward),
+                iconSize: 24,
+                elevation: 16,
+                style: TextStyle(
+                    color: Colors.deepPurple
+                ),
+                underline: Container(
+                  height: 2,
+                  color: Colors.deepPurpleAccent,
+                ),
+                onChanged: (String newValue) {
+                  setState(() {
+                    _goal = newValue;
+                  });
+                },
+                items: <String>['one', 'Two', 'Three', 'Four']
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                })
+                    .toList(),
 
+              ),
+            ],
           ),
           Text("What days would you like to perform this habit?"),
           Row(

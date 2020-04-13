@@ -44,13 +44,16 @@ class _HabitListState extends State<HabitList> {
             child: CircularProgressIndicator(),
           );
         } else if (state is HabitsLoaded) {
-          print("habitsLoaded");
-          return ListView.builder(itemBuilder: (context, index) {
-            final displayedHabit = state.habits[index];
-            return HabitTile(habit: displayedHabit);
-          },
-          itemCount: state.habits.length
-          );
+          if(state.habits.length > 0) {
+            return ListView.builder(itemBuilder: (context, index) {
+              final displayedHabit = state.habits[index];
+              return HabitTile(habit: displayedHabit);
+            },
+                itemCount: state.habits.length
+            );
+          } else {
+            return Card();
+          }
         }
         else return Card();
       },
