@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 
-import 'package:habittracker/bloc/goal_bloc/goal_event.dart';
-import 'package:habittracker/bloc/goal_bloc/goal_state.dart';
+import 'package:habittracker/bloc/goal_bloc/bloc.dart';
 
 class GoalBloc extends Bloc<GoalEvent, GoalState> {
   @override

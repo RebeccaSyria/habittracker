@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:habittracker/model/habit/habit.dart';
 import 'package:habittracker/view_habit_page.dart';

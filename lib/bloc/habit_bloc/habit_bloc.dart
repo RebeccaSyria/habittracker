@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:habittracker/model/habit/habit_dao.dart';
-import 'bloc.dart';
+import 'package:habittracker/bloc/habit_bloc/bloc.dart';
 
 class HabitBloc extends Bloc<HabitEvent, HabitState> {
   HabitDao _habitDao = HabitDao();
