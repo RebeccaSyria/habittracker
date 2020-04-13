@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:habittracker/bloc/goal_bloc/bloc.dart';
 import 'package:habittracker/bloc/habit_bloc/bloc.dart';
 import 'package:habittracker/bloc/habit_bloc/habit_bloc.dart';
 import 'package:habittracker/widgets/goal_list.dart';
@@ -14,7 +15,7 @@ class _PageContainerState extends State<PageContainer> {
   int _index = 0;
   static List<Widget> _pageOptions = <Widget>[
     _buildHabitList(),
-    GoalList(),
+    _buildGoalList(),
     DayList()
   ];
   @override
@@ -57,6 +58,13 @@ class _PageContainerState extends State<PageContainer> {
     return BlocProvider(
       bloc: HabitBloc(),
       child: HabitList(),
+    );
+  }
+
+  static Widget _buildGoalList() {
+    return BlocProvider(
+      bloc: GoalBloc(),
+      child: GoalList()
     );
   }
 }
